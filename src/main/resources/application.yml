@@ -4,8 +4,7 @@ spring:
 
   #profile
   profiles:
-    active: native
-    #active: native, git
+    active: native, git
 
   #cloud configuration
   #https://docs.spring.io/spring-cloud-config/reference/server/environment-repository/file-system-backend.html
