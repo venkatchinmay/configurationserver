@@ -1,0 +1,31 @@
+spring:
+  application:
+    name: config-server
+
+  #profile
+  profiles:
+    active: native
+    #active: native, git
+
+  #cloud configuration
+  #https://docs.spring.io/spring-cloud-config/reference/server/environment-repository/file-system-backend.html
+  cloud:
+    config:
+      server:
+        native:
+          searchLocations: classpath:/config # file:///{FILE_PATH} - Eg: file:///users/chinmay/config
+        #git:
+          #uri: https://github.com/venkatchinmay/microservices-configuration.git
+          #defaultLabel: dev
+          #tryMasterBranch: false
+          #search-paths:
+          # - licensing-service
+server:
+  port: 8071
+
+#Enable all Spring Boot Actuator endpoints.
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"

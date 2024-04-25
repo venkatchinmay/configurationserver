@@ -1,0 +1,4 @@
+environment.property: "I AM PROD"
+spring.datasource.url: "jdbc:postgresql://postgres:5432/chinmay_prod"
+spring.datasource.username: chinmay
+spring.datasource.password: chinmay
