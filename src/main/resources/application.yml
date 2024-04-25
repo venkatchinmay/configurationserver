@@ -12,14 +12,12 @@ spring:
   cloud:
     config:
       server:
-        native:
-          searchLocations: classpath:/config # file:///{FILE_PATH} - Eg: file:///users/chinmay/config
-        #git:
-          #uri: https://github.com/venkatchinmay/microservices-configuration.git
-          #defaultLabel: dev
-          #tryMasterBranch: false
-          #search-paths:
-          # - licensing-service
+        git:
+          uri: https://github.com/venkatchinmay/microservices-configuration.git
+          defaultLabel: dev
+          tryMasterBranch: false
+          search-paths:
+           - licensing-service
 server:
   port: 8071
 
