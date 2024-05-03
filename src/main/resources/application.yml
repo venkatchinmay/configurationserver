@@ -4,22 +4,23 @@ spring:
 
   #profile
   profiles:
-    active: native
-    #active: native, git
+    active: vault
+
 
   #cloud configuration
   #https://docs.spring.io/spring-cloud-config/reference/server/environment-repository/file-system-backend.html
   cloud:
     config:
       server:
-        native:
-          searchLocations: classpath:/config # file:///{FILE_PATH} - Eg: file:///users/chinmay/config
-        #git:
-          #uri: https://github.com/venkatchinmay/microservices-configuration.git
-          #defaultLabel: dev
-          #tryMasterBranch: false
-          #search-paths:
-          # - licensing-service
+        vault:
+          port: 8200
+          host: vault
+          kvVersion: 2
+          authentication: TOKEN
+          token: myroot
+          scheme: http
+
+
 server:
   port: 8071
 
